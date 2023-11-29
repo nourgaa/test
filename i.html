@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)file:///Users/bloody/Desktop/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Birthday CelebratioN 🎉</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute and playful font */
+            text-align: center;
+            background-color: #ffe6f2; /* Soft pink background */
+            color: #663399; /* Purple text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffccff; /* Lighter pink header */
+            padding: 1em;
+            color: #663399;
+            font-size: 1.5em;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        main {
+            display: none; /* Initially hide the main content */
+            padding: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a cute shadow to the image */
+        }
+
+        button {
+            background-color: #ff66b2; /* Pink button */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Add rounded corners */
+            transition: background-color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        button:hover {
+            background-color: #ff3385; /* Darker pink on hover */
+        }
+
+        #countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        #overlay p {
+            font-size: 2em;
+            color: #663399;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎈 ERJWAN Birthday Celebration 🎂</h1>
+    </header>
+
+    <!-- Overlay for "Coming Soon" message -->
+    <div id="overlay" style="display: none;">
+        <p>This site will be available in:</p>
+        <p id="comingSoonCountdown"></p>
+    </div>
+
+    <main style="display: block;">
+        <p>HAPPY BIRTHDAY!TIME TO PARTY</p> 
+        
+        <p id="birthdayMessage">Hooray! It's your special day! </p>
+        <button onclick="displayBirthdayMessage()">Click me for a cute surprise! 🎁</button>
+        <br><br>
+        <button onclick="displayPlaylist()">Click here for another suprise! 🎶</button>
+        <p id="playlist"></p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown">💋💋 </div>
+    </main>
+
+    <script>
+        function displayBirthdayMessage() {
+            document.getElementById("birthdayMessage").innerHTML = "Bloody loves you bitch❤️‍🔥";
+            document.getElementById("birthdayImage").src = "";
+        }
+
+        function displayPlaylist() {
+            document.getElementById("playlist").innerHTML = "Here is your playlist!!";
+            // Add the link to the playlist or leave it empty if you don't have one
+            window.location.href = "https://music.apple.com/sa/playlist/hbd-bitch/pl.u-kv9llNJuJpy4Wdl?l=ar";
+        }
+
+        // Countdown Timer
+        const countdownDate = new Date(" 17, 2023 00:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `This site will be available in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById("comingSoonCountdown").innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            } else {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "💋💋 "  ;
+                // Hide the overlay and display the main content
+                document.getElementById("overlay").style.display = "none";
+                document.querySelector("main").style.display = "block";
+            }
+        }, 1000);
+    </script>
+
+</body></html>
